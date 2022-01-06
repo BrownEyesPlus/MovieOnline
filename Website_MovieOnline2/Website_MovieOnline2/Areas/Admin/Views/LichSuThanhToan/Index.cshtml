@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Website_MovieOnline2.Models.ModelPhim2.LichSuThanhToan>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Lauyout.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Lịch sử thanh toán</h2>
+
+
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.User.TaiKhoan)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Gia)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Ngay)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.User.TaiKhoan)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Gia)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Ngay)
+                        </td>
+                        <td>
+                            
+                    </tr>
+                }
+
+            </table>
+
+        </div>
+    </div>
+</div>

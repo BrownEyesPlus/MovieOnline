@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Website_MovieOnline2.Models.ModelPhim1.DaoDien>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Lauyout.cshtml";
+}
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <p>
+                @Html.ActionLink("Create New", "Create")
+            </p>
+            <table class="table">
+                <tr>
+                    <th>
+                        Tên đạo diễn
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Ten)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Ma }) |
+
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Ma })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>

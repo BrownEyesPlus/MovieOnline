@@ -1,0 +1,81 @@
+﻿@using Website_MovieOnline2.Models.ModelPhim1;
+
+@{
+    ViewBag.Title = "ChiTietPhim";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    DateTime ngay = Model.NgayPhatHanh;
+}
+
+<br class="mt-5 mb-3">
+<br class="mt-5 mb-3">
+<br class="mt-5 mb-3">
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card ">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card mt-1 ml-1">
+                            <div class="card-block">
+                                <img src="~/Content/images/@Model.AnhMoi" alt="" style="width: 100%" class="img-fluid">
+
+                                <a class="nuthire btn  col-xs-1 mt-1" href="Phim/Xem/@Model.Ma"></a>
+                                <a class="nuthire btn btn-outline-danger mt-1 col-xs-5" href="@Url.Action("Create","MucYeuThich", new {id = Model.Ma})">Yêu thích</a>
+                                <a class="nuthire btn btn-warning  mt-1 col-xs-5" href="@Url.Action("Xem","Phim",new {id=Model.Ma })">Xem phim</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 ">
+                        <br>
+                        <br>
+                        <h2 style="color: brown; text-transform: uppercase;">@Model.TenPhimTiengViet</h2>
+                        <h4>@Model.Ten</h4>
+                        <div class="card mt-1 mr-1">
+                            <div class="card-block">
+                                <p>Điểm IMDb: @Model.DiemIMDb</p>
+                                <p>Đạo diễn: @Model.DaoDien</p>
+                                <p>Quốc gia: @Model.QuocGia</p>
+                                <p>Năm: @ngay.Year.ToString()</p>
+
+                                <p>Ngày phát hành: @ngay.Day.ToString()/@ngay.Month.ToString()/@ngay.Year.ToString()</p>
+                                <p>Thời lượng: @Model.ThoiLuong</p>
+                                <p>Ngôn ngữ: @Model.NgonNgu</p>
+                                <p> Thể loại: @Model.TheLoai</p>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quisquam assumenda aperiam id maxime quidem culpa hic laboriosam magnam ullam molestiae harum ipsa nostrum dolorem impedit eum libero, dolores nesciunt.</p>
+                                <p>...</p>
+                            </div>
+                        </div>
+
+                        <div class=" mt-1 mr-1">
+                            <div class="">
+                                <h3>Đánh giá phim:</h3>
+                                <p>...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="noidung1">
+
+    <div class="container mt-1 mb-3">
+        <div class="row">
+            <div class="col-md-12">
+
+                <h3>Trailer Phim: @Model.TenPhimTiengViet</h3>
+                <iframe style="width: 100%; height:650px" src="~/Content/videos/@Model.TenTep" frameborder="0" allowfullscreen=""></iframe>
+
+            </div>
+        </div>
+    </div>
+</div> <!-- het noi dung 1 -->

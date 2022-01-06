@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Website_MovieOnline2.Models.ModelPhim1.LichSuGiaThanhVienVIP>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Lauyout.cshtml";
+}
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Giá đăng ký thành viên VIP hiện tại: @Model.FirstOrDefault().Gia VNĐ</h2>
+            <br />
+            <h4>
+                @Html.ActionLink("Điều chỉnh giá mới", "Create")
+            </h4>
+            <hr />
+            <h2 class="col-sm-10 text-center">Lịch sử điều chỉnh:     </h2>
+            <br />
+            <table class="table">
+                <tr>
+                    <th>
+                        Được điều chỉnh bởi
+                    </th>
+                    <th>
+                        Giá
+                    </th>
+                    <th>
+                        Thời điểm điều chỉnh
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Admin.TaiKhoan)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Gia)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Ngay)
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>

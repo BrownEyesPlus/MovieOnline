@@ -1,0 +1,153 @@
+﻿@model PagedList.IPagedList<Website_MovieOnline2.Models.ModelPhim2.PhimView>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<hr />
+<hr />
+<hr />
+<!-- Search form -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            @using (@Html.BeginForm("Index", "TimKiemPhim", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="input-group input-group">
+                    <input type="text" name="search" class="form-control" data-provide="typeahead" autocomplete="off" value="">
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn btn-danger">
+                            <i class="fa fa-search"></i>
+                            <span class="searchText">Tìm kiếm</span>
+                        </button>
+                    </span>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+
+
+
+<div class="noidungcontact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <hr class="mt-2">
+                <div class="contact-form">
+                    <form method="post" id="contactform" action="/Contact/SubmitContact" style="margin-bottom:40px;" novalidate="novalidate">
+
+                        <div class="row">
+
+                            <div class="col-md-3">
+                                <select id="" class="frm-contact form-control" name="Gender">
+                                    <option selected="">Thể loại</option>
+
+                                    <option id="title-ms" value="Kinhdi" name="Theloai"> Kinh dị</option>
+                                    <option id="title-mr" value="Vientuong" name="Theloai"> Viễn tưởng </option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-3">
+                                <select id="" class="frm-contact form-control" name="Gender">
+                                    <option selected="">Quốc gia</option>
+
+                                    <option id="title-ms" value="Vietnam" name="Gender"> Việt Nam </option>
+                                    <option id="title-mr" value="My" name="Gender"> Mỹ </option>
+                                    <option id="title-mr" value="Hanquoc" name="Gender"> Hàn Xẻng </option>
+                                    <option id="title-mr" value="Nhatban" name="Gender"> Nhật </option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-3">
+                                <select id="" class="frm-contact form-control" name="Gender">
+                                    <option selected="">Năm</option>
+
+                                    <option id="title-ms" value="2020" name="Gender"> 2020 </option>
+                                    <option id="title-mr" value="2019" name="Gender"> 2019 </option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-3">
+                                <a href="" class="btn btn-danger"> Lọc </a>
+                            </div>
+
+
+                        </div>
+                </div>
+                <hr>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="khoiphimmoinhat">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-xs-center">
+
+
+            </div>
+
+            @foreach (var it in Model)
+            {
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-block">
+                            <img src="~/Content/images/@it.AnhMoi" alt="" class="img-fluid">
+                            <h6 class="card-title">
+                                @it.TenPhimTiengViet
+                            </h6>
+                            <a class="nuthire btn btn-warning" href="~/Phim/ChiTietPhim/@it.Ma">Xem phim</a>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <!-- Thêm mã phân trang -->
+            <div class="col-sm-12 text-xs-center float-xs-left">
+                <br />
+                Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+                <table class="table">
+
+                    <tr>
+                       
+                        <td colspan="4" align="center" class="">
+                            @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page, @class = "" }))
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            @*<nav class="navbar navbar-expand-lg navbar-light bg-light">               
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#">Disabled</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>*@
+
+    </div>
+    </div>
+</div>
+

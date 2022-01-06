@@ -1,0 +1,25 @@
+﻿@model List<Website_MovieOnline2.Models.ModelPhim2.BinhLuanView>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.ThoiGian)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoiDung)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenHienThi)
+        </td>
+        
+    </tr>
+}
+
+</table>

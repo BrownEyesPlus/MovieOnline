@@ -1,0 +1,114 @@
+﻿@model Website_MovieOnline2.Models.RegisterModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title> Đăng ký</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="@Url.Content("~/Content/vendor/bootstrap.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/1.js")"></script>
+    <link rel="stylesheet" href="@Url.Content("~/Content/vendor/bootstrap.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/vendor/font-awesome.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/1.css")">
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body class="bg-gradient-primary">
+    
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2">
+
+            </div>
+            <div class="col-sm-8">
+                @using (Html.BeginForm("Register","Login",FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+
+                <div class="col-sm-10">
+                    <hr />
+                    <h4 class="text-xs-center" style="color:#0e300e">Đăng ký</h4>
+                    <hr />
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-primary" })
+                    @if (ViewBag.Success != null) { <div class="alert-success">@ViewBag.Success</div>}
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.TaiKhoan, htmlAttributes: new { @class = "control-label col-md-8" })
+                        <div class="col-md-12 ">
+                            @Html.EditorFor(model => model.TaiKhoan, new { htmlAttributes = new { @class = "form-control " } })
+                            @Html.ValidationMessageFor(model => model.TaiKhoan, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.MatKhau, htmlAttributes: new { @class = "control-label col-md-3" })
+                        <div class="col-md-12">
+                            @Html.EditorFor(model => model.MatKhau, new { htmlAttributes = new { @class = "form-control" , @type="password"} })
+                            @Html.ValidationMessageFor(model => model.MatKhau, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.XacNhanMatKhau, htmlAttributes: new { @class = "control-label col-md-5" })
+                            <div class="col-md-12">
+                                @Html.EditorFor(model => model.XacNhanMatKhau, new { htmlAttributes = new { @class = "form-control", @type = "password" } })
+                                @Html.ValidationMessageFor(model => model.XacNhanMatKhau, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.TenHienThi, htmlAttributes: new { @class = "control-label col-md-8" })
+                            <div class="col-md-12">
+                                @Html.EditorFor(model => model.TenHienThi, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.TenHienThi, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.HoTen, htmlAttributes: new { @class = "control-label col-md-8" })
+                            <div class="col-md-12">
+                                @Html.EditorFor(model => model.HoTen, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.HoTen, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.NgaySinh, htmlAttributes: new { @class = "control-label col-md-8" })
+                            <div class="col-md-12">
+                                @Html.EditorFor(model => model.NgaySinh, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.NgaySinh, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        @*@if (Model.TrangThaiVip == false)
+        {
+            <p>Bạn chưa đăng ký VIP</p>
+            <a class="small" href="@Url.Action("DangKyVIP","Login") ">Create an Account!</a>
+        }
+        else
+        {
+            <p>Quyền lợi VIP: Xem phim không giới hạn với chất lượng phim HD.</p>
+        }*@
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Đăng ký" class="btn btn-success text-xs-center" />
+                            </div>
+                        </div>
+                    <a href="@Url.Action("Index","Login")" class="text-xs-center">Đã có tài khoản</a>
+
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

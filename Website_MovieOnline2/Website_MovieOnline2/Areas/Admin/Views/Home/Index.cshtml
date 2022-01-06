@@ -1,0 +1,123 @@
+﻿
+@using Website_MovieOnline2.Models.ModelPhim1;
+@model dynamic
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Lauyout.cshtml";
+}
+
+<!-- Begin Page Content -->
+
+@section ClientScript
+{
+
+}
+
+
+
+<div class="container mb-2">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="input-group input-group"> <input type="text" name="term" class="form-control" data-provide="typeahead" autocomplete="off" value=""> <span class="input-group-btn"> <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> <span class="searchText">Tìm kiếm Phim</span></button> </span> </div>
+        </div>
+    </div>
+</div>
+
+<div class="noidungcontact ">
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <hr class="">
+                <div class="contact-form">
+                    <form method="post" id="contactform" action="/Contact/SubmitContact" style="margin-bottom:40px;" novalidate="novalidate">
+
+                        <div class="row">
+
+                            <div class="col-md-2">
+                                <a href="@Url.Action("Create", "QuanlyPhim")" class="btn btn-block btn-danger"> Thêm Mới </a>
+                            </div>
+
+                            <div class="col-md-3">
+                                <select id="" class="frm-contact form-control" name="Gender">
+                                    <option selected="">Thể loại</option>
+
+                                    <option id="title-ms" value="Kinhdi" name="Theloai"> Kinh dị</option>
+                                    <option id="title-mr" value="Vientuong" name="Theloai"> Viễn tưởng </option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-3">
+                                <select id="" class="frm-contact form-control" name="Gender">
+                                    <option selected="">Quốc gia</option>
+
+                                    <option id="title-ms" value="Vietnam" name="Gender"> Việt Nam </option>
+                                    <option id="title-mr" value="My" name="Gender"> Mỹ </option>
+                                    <option id="title-mr" value="Hanquoc" name="Gender"> Hàn Xẻng </option>
+                                    <option id="title-mr" value="Nhatban" name="Gender"> Nhật </option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-3">
+                                <select id="" class="frm-contact form-control" name="Gender">
+                                    <option selected="">Năm</option>
+
+                                    <option id="title-ms" value="2020" name="Gender"> 2020 </option>
+                                    <option id="title-mr" value="2019" name="Gender"> 2019 </option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-1">
+                                <a href="" class="btn btn-primary"> Lọc </a>
+                            </div>
+
+
+                        </div>
+                </div>
+                <hr>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+                </div>
+
+<div class="khoiphimtimkiem">
+    <div class="container">
+        <div class="row">
+
+            
+                @foreach (PhimView it in Model.PhimViews)
+                {
+                    <div class="col-sm-3">
+                        <div class="card">
+                            <div class="card-block">
+                                <img src="~/Content/images/@it.AnhMoi" alt="" class="img-fluid">
+                                <h6 class="card-title">
+                                    @it.Ten
+                                </h6>
+                                <div class="row">
+                                    <div class="col-md-4 btnadmin-left">
+                                        <a class="nuthire btn btn-block btn-primary" href="@Url.Action("Details", "QuanlyPhim",new {id = it.Ma})">Xem</a>
+                                    </div>
+                                    <div class="col-md-4 btnadmin">
+                                        <a class="nuthire btn btn-block btn-warning" href="@Url.Action("Edit", "QuanlyPhim",new {id = it.Ma})">Sửa</a>
+                                    </div>
+                                    <div class="col-md-4 btnadmin-right">
+                                        <a class="nuthire btn btn-block btn-outline-danger" href="@Url.Action("Delete", "QuanlyPhim",new {id = it.Ma})">Xóa</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+
+
+        </div>
+    </div>
+</div>
+<!-- End of Main Content -->

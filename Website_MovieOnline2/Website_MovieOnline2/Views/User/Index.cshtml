@@ -1,0 +1,76 @@
+﻿@model Website_MovieOnline2.Models.ModelPhim2.User
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+<br />
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div>
+                <h4>Thông tin cá nhân</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.TaiKhoan):
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.TaiKhoan)
+                    </dd>
+
+                    
+                    
+                    <dt>
+                        @Html.DisplayNameFor(model => model.TenHienThi):
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.TenHienThi)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.HoTen):
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.HoTen)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.NgaySinh)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.NgaySinh)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.TrangThaiVip)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.TrangThaiVip)
+                    </dd>
+
+                    @if (Model.TrangThaiVip == false)
+                    {
+                        <p>Bạn chưa đăng ký VIP</p>
+                        <a class="small" href="@Url.Action("DangKyVIP","User") ">Đăng ký thành viên VIP</a>
+                    }
+                    else
+                    {
+                        <p>Quyền lợi VIP: Xem phim không giới hạn với chất lượng phim HD.</p>
+                    }
+
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>

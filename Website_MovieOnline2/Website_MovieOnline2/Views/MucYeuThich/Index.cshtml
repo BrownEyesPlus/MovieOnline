@@ -1,0 +1,42 @@
+﻿
+@using Website_MovieOnline2.Models.ModelPhim2;
+@model dynamic
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<hr />
+<hr />
+<hr />
+
+<div class="khoiphimmoinhat">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-xs-center">
+                <h2 style="margin-top: 30px; margin-bottom: 30px; color: #854e00; text-transform: uppercase;">MỤC PHIM YÊU THÍCH</h2>
+                <hr class="pb-2">
+            </div>
+
+            @foreach (MucYeuThichView it in Model.MucYeuThichView)
+            {
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-block">
+                            <img src="~/Content/images/@it.AnhMoi" alt="" class="img-fluid">
+                            <h6 class="card-title">
+                                @it.TenPhimTiengViet
+                            </h6>
+                            <a class="nuthire btn btn-warning" href="~/Phim/ChiTietPhim/@it.Ma">Xem phim</a>
+                            <a class="nuthire btn btn-outline-danger" href="@Url.Action("Delete","MucYeuThich", new {id =it.Ma })">Bỏ thích</a>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Website_MovieOnline2.Models.ModelPhim2.TopView>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Lauyout.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Top 20 bộ phim có lượt xem nhiều nhất</h2>
+            <br />
+            @{ int count = 1;}
+            <table class="table">
+                <tr>
+                    <th>
+                        STT
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Ten)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TenPhimTiengViet)
+                    </th>
+
+                    <th>
+                        Lượt xem
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @count  @{ count = count+1;}
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Ten)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TenPhimTiengViet)
+                        </td>
+                        
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Viewer)
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                    
+                }
+
+            </table>
+        </div>
+    </div>
+</div>

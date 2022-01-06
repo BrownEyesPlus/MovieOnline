@@ -1,0 +1,35 @@
+/* Style the list */
+ul.breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+  background-color: #eee;
+}
+
+.container-fluid.fullmanhinh {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.footer {
+    background-color: #1f232b;
+    color: burlywood;
+}
+
+.chutrongtable {
+	font-size: 25px;
+	padding-top: 100px;		
+}
+
+/*trang contact*/
+.contact .contact-form {
+    margin-top: 10px;
+}
+
+.form-control {
+	margin: 5px;
+}
+
+ .active-pink-2 input.form-control[type=text]:focus:not([readonly]) {
+              border-bottom: 1px solid #f48fb1;
+              box-shadow: 0 1px 0 0 #f48fb1;
+            }

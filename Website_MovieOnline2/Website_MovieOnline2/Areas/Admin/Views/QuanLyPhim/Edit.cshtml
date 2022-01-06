@@ -1,0 +1,148 @@
+﻿@model Website_MovieOnline2.Models.ModelPhim1.Phim
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Lauyout.cshtml";
+}
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            @using (Html.BeginForm("Edit", "QuanLyPhim", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h2>Chỉnh sửa</h2>
+                <h4>Phim</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.Ma)
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Ten, htmlAttributes: new { @class = "control-label col-md-10" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Ten, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Ten, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.TenPhimTiengViet, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.TenPhimTiengViet, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.TenPhimTiengViet, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.DiemIMDb, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.DiemIMDb, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.DiemIMDb, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.NgayPhatHanh, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.NgayPhatHanh, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.NgayPhatHanh, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.MoTa, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(model => model.MoTa, 10, 120, new { htmlAttributes = new { @class = "form-control " } })
+                        @Html.ValidationMessageFor(model => model.MoTa, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.AnhMoi, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <input type="file" name="ImageFile" required />
+                        @* @Html.EditorFor(model => model.AnhMoi, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AnhMoi, "", new { @class = "text-danger" })*@
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ThoiLuong, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.ThoiLuong, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ThoiLuong, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.NgonNgu, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.NgonNgu, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.NgonNgu, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.TenTep, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.TenTep, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.TenTep, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row pl-2">
+                    @Html.LabelFor(model => model.MaTheLoai, "MaTheLoai", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-3">
+                        @Html.DropDownList("MaTheLoai", (IEnumerable<SelectListItem>)ViewBag.TheLoaiList, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.MaTheLoai, "", new { @class = "text-danger" })
+
+                    </div>
+                    <div class="col-md-2 ">
+                        <a class="btn btn-primary" href="@Url.Action("Index","QuanLyTheLoai")"> Thêm </a>
+                    </div>
+                </div>
+
+                <div class="form-group row pl-2">
+                    @Html.LabelFor(model => model.MaDaoDien, "MaDaoDien", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-4">
+                        @Html.DropDownList("MaDaoDien", (IEnumerable<SelectListItem>)ViewBag.DaoDienList, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.MaDaoDien, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-md-2">
+                        <a class="btn btn-primary" href="@Url.Action("Index","QuanLyDaoDien")"> Thêm </a>
+                    </div>
+                </div>
+
+                <div class="form-group row pl-2">
+                    @Html.LabelFor(model => model.MaQuocGia, "MaQuocGia", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-3">
+                        @Html.DropDownList("MaQuocGia", (IEnumerable<SelectListItem>)ViewBag.QuocGiaList, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.MaQuocGia, "", new { @class = "text-danger" })
+                    </div>
+
+                </div>
+                @Html.HiddenFor(model => model.Viewer, new { htmlAttributes = new { @class = "form-control" } })
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-warning" />
+                    </div>
+                </div>
+            </div>
+            }
+
+            @Html.HiddenFor(model => model.Viewer, htmlAttributes: new { @class = "control-label col-md-2" })
+            
+
+            <div>
+                @Html.ActionLink("Back to List", "Index", "Home")
+            </div>
+        </div>
+
+    </div>
+</div>
+
+

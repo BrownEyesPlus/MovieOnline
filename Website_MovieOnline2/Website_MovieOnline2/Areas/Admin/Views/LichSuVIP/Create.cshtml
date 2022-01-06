@@ -1,0 +1,63 @@
+﻿@model Website_MovieOnline2.Models.ModelPhim1.LichSuGiaThanhVienVIP
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_Lauyout.cshtml";
+
+    DateTime homnay = DateTime.Now;
+}
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <h4>Điều chỉnh giá mới</h4>
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Gia, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Gia, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Gia, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+                    @*<div class="form-group">
+                    @Html.LabelFor(model => model.Ngay, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+
+                        @Html.TextBoxFor(model => model.Ngay, new { htmlAttributes = new { @value = @DateTime.Now.ToShortDateString(), disabled = true, @readonly = "readonly" } })
+                        @Html.ValidationMessageFor(model => model.Ngay, "", new { @class = "text-danger" })
+                    </div>
+                </div>*@
+
+                    @*<div class="form-group">
+                    @Html.LabelFor(model => model.MaAdmin, "MaAdmin", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("MaAdmin", null, htmlAttributes: new { @class = "form-control", })
+                        @Html.ValidationMessageFor(model => model.MaAdmin, "", new { @class = "text-danger" })
+                    </div>
+                </div>*@
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Chấp thuận" class="btn btn-warning" />
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div>
+                @Html.ActionLink("Back to List", "Index", "LichSuVIP")
+            </div>
+        </div>
+    </div>
+</div>

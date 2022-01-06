@@ -1,0 +1,41 @@
+﻿@model Website_MovieOnline2.Models.ModelPhim1.TheLoai
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_Lauyout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Delete</h2>
+
+            <h3>Bạn có chắc muốn xóa?</h3>
+            <div>
+                <h4>TheLoai</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Ten)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Ten)
+                    </dd>
+
+                </dl>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Delete" class="btn btn-default" /> |
+                        @Html.ActionLink("Back to List", "Index")
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+</div>

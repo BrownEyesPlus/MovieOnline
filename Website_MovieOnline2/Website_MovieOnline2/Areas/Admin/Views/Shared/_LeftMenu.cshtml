@@ -1,0 +1,128 @@
+﻿<!-- Sidebar -->
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+        <div class="sidebar-brand-icon rotate-n-15">
+            <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">Alpha Movie</div>
+    </a>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item active">
+        <a class="nav-link" href="#">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Dashboard</span>
+        </a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        Movie
+    </div>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+           aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Phim</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Quản lý:</h6>
+                <a class="collapse-item" href="@Url.Action("Index","Home")">Phim</a>
+                <a class="collapse-item" href="@Url.Action("Index","QuanLyTheLoai")">Thể loại</a>
+                <a class="collapse-item" href="@Url.Action("Index","QuanLyDaoDien")">Đạo diễn</a>
+            </div>
+        </div>
+    </li>
+
+    <!-- Nav Item - Quang Cao Menu -->
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        Quảng cáo
+    </div>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link" href="#">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Quản lý quảng cáo</span>
+        </a>
+    </li>
+
+    <!-- Nav Item - Quang Cao Menu -->
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        Tài khoản
+    </div>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link" href="#">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Quản lý tài khoản</span>
+        </a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        Lịch sử giá
+    </div>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link" href="@Url.Action("Index","LichSuVIP")">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Thẻ VIP</span>
+        </a>
+    </li>
+
+    <!-- Nav Item - Charts -->
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        Thống kê
+    </div>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link" href="@Url.Action("Index","LichSuThanhToan")">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Thành viên VIP</span>
+        </a>
+    </li>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link" href="@Url.Action("Index","TopYeuThich")">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Top yêu thích</span>
+        </a>
+    </li>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link" href="@Url.Action("Index","TopView")">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Top lượt xem</span>
+        </a>
+    </li>
+</ul>
+<!-- End of Sidebar -->

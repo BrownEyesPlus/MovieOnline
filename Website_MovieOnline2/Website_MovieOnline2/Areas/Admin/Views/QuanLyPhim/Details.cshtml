@@ -1,0 +1,69 @@
+﻿@using Website_MovieOnline2.Models.ModelPhim1;
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Lauyout.cshtml";
+    DateTime ngay = Model.NgayPhatHanh;
+}
+
+<br class="mt-5 mb-3">
+<br class="mt-5 mb-3">
+<br class="mt-5 mb-3">
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card ">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card mt-1 ml-1">
+                            <div class="card-block">
+                                <img src="~/Content/images/@Model.AnhMoi" alt="" style="width: 100%" class="img-fluid">
+
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 ">
+                        <br>
+                        <br>
+                        <h2 style="color: brown; text-transform: uppercase;">@Model.TenPhimTiengViet</h2>
+                        <h4>@Model.Ten</h4>
+                        <div class="card mt-1 mr-1">
+                            <div class="card-block">
+                                <p>Điểm IMDb: @Model.DiemIMDb</p>
+                                <p>Đạo diễn: @Model.DaoDien</p>
+                                <p>Quốc gia: @Model.QuocGia</p>
+                                <p>Năm: @ngay.Year.ToString()</p>
+
+                                <p>Ngày phát hành: @ngay.Day.ToString()/@ngay.Month.ToString()/@ngay.Year.ToString()</p>
+                                <p>Thời lượng: @Model.ThoiLuong</p>
+                                <p>Ngôn ngữ: @Model.NgonNgu</p>
+                                <p> Thể loại: @Model.TheLoai</p>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quisquam assumenda aperiam id maxime quidem culpa hic laboriosam magnam ullam molestiae harum ipsa nostrum dolorem impedit eum libero, dolores nesciunt.</p>
+                                <p>...</p>
+                            </div>
+                        </div>
+
+                        <div class=" mt-1 mr-1">
+                            <div class="">
+                                <h3>Đánh giá phim:</h3>
+                                <p>...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+

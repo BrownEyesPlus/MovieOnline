@@ -1,0 +1,148 @@
+﻿@model Website_MovieOnline2.Models.ModelPhim1.Phim
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_Lauyout.cshtml";
+}
+
+
+ 
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Delete</h2>
+
+            <h3 style="color: red">Bạn co chắc muốn xóa phim này?</h3>
+
+            <div>
+                <h4>Phim</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.DaoDien.Ten)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.DaoDien.Ten)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.QuocGia.Ten)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.QuocGia.Ten)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.TheLoai.Ten)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.TheLoai.Ten)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Ten)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Ten)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.TenPhimTiengViet)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.TenPhimTiengViet)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.DiemIMDb)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.DiemIMDb)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.NgayPhatHanh)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.NgayPhatHanh)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.MoTa)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.MoTa)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.AnhMoi)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.AnhMoi)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ThoiLuong)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.ThoiLuong)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.NgonNgu)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.NgonNgu)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.DanhGiaTB)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.DanhGiaTB)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.TenTep)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.TenTep)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Viewer)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Viewer)
+                    </dd>
+
+                </dl>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Delete" class="btn btn-outline-danger" /> |
+                        @Html.ActionLink("Hủy và trở về trang Quản Trị", "Index")
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+</div>

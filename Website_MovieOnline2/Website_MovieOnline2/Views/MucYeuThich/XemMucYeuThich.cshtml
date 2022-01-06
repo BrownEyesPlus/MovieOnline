@@ -1,0 +1,111 @@
+﻿@model IEnumerable<Website_MovieOnline2.Models.ModelPhim2.MucYeuThichView>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ten)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenPhimTiengViet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiemIMDb)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayPhatHanh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MoTa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnhMoi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThoiLuong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgonNgu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenTep)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuocGia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DaoDien)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TheLoai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Viewer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaUser)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TaiKhoan)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ten)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenPhimTiengViet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiemIMDb)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayPhatHanh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MoTa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnhMoi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThoiLuong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgonNgu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenTep)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuocGia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DaoDien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TheLoai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Viewer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaUser)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaiKhoan)
+            </td>
+            <td>
+            </td>
+        </tr>
+    }
+
+</table>
+
+@RenderPage("~/Views/MucYeuThich/ThemBinhLuan.cshtml")
